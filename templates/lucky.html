@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Greeter Form V1{% endblock %}
+{% block content %}
+
+<h1>Your Lucky Number is: {{lucky_num}}</h1>
+<p>{{msg}}</p>
+
+{% if lucky_num == 3 %}
+<h2>That's my lucky number too!</h2>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6qOwHjjiO_Qhu984DyCXzzuXlIGNmXW2aVg&usqp=CAU"
+    class="img-thumbnail m-2 shadow-2-strong" alt="">
+{% else %}
+<h2>{{lucky_num}} is not my lucky number!</h2>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVrZQOs9WKXDzxqEypZFRoSwM48R0xZW9KGw&usqp=CAU"
+    class="img-thumbnail m-2 shadow-2-strong" alt="">
+{% endif %}
+
+{% endblock %}
