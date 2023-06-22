@@ -1,2 +1,1 @@
-<<<<<<< HEAD
 # First-Flask-App
