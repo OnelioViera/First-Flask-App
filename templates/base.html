@@ -5,44 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/app.css">
 </head>
+<!-- Start Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/hello">
+    <a class="navbar-brand">
         <img src="/static/python.png" width="30" height="30" class="d-inline-block align-top mx-2" alt="">
-        Python
     </a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav active">
+            <a class="nav-item nav-link" href="/">Home</a>
             <a class="nav-item nav-link" href="/form">Greet V1</a>
             <a class="nav-item nav-link" href="/form-2">Greet V2</a>
             <a class="nav-item nav-link" href="/lucky">Lucky</a>
-
-
+            <a class="nav-item nav-link" href="/movies">Movies</a>
         </div>
     </div>
 </nav>
+<!-- End Navbar -->
 
 <body>
+    <section class="messages m-5">
 
+    </section>
+    <!-- Start Content Container -->
     <div class="container m-5">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <section class="messages">
+            {% for category, msg in messages %}
+            <p class="h5 {{category}}">{{msg}}</p>
+            {% endfor %}
+        </section>
+        {% endif %}
+        {% endwith %}
         {% block content %} {% endblock %}
     </div>
+    <!-- End Content Container -->
 
-
+    <!-- Footer -->
     <footer class="bg-dark text-center text-lg-start fixed-bottom">
         <!-- Copyright -->
         <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2023 Copyright:
-            <a class="text-white" href="">USF Bootcamp</a>
+            2023 USF Bootcamp:
+            <a class="text-white" href="#">Onelio Viera</a>
         </div>
         <!-- Copyright -->
     </footer>
-
-
+    <!-- End Footer -->
 
     <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -54,6 +67,7 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <!-- <script src="/static/app.js"></script> -->
+
 </body>
 
 </html>

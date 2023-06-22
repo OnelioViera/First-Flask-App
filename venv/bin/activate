@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/ojvwe/FirstFlaskApp/venv"
+VIRTUAL_ENV="/mnt/c/Users/ojvwe/OneDrive/Documents/GitHub/First-Flask-App/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

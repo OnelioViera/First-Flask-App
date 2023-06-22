@@ -5,3 +5,19 @@ h1 {
 body {
   background-color: antiquewhite;
 }
+
+.messages p {
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 3px 5px (0, 0, 0, 0.2);
+}
+
+.messages .success {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.messages .error {
+  color: red;
+  background-color: rgba(225, 0, 0, 0.1);
+}
